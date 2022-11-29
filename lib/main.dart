@@ -9,6 +9,7 @@ import 'package:riverpod_tutorial/user.dart';
 // StateNotifier and StateNotifierProvider
 // ChnageNotifierProvider
 // Future Provider
+// Stream Provider
 
 final fetchUserProvider = FutureProvider((ref) {
   final userRepository = ref.watch(userRepositoryProvider);
