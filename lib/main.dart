@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_tutorial/home_screen.dart';
+import 'package:riverpod_tutorial/user.dart';
+
 //Providers
 // Provider
 // StateProvider
@@ -8,10 +10,10 @@ import 'package:riverpod_tutorial/home_screen.dart';
 // ChnageNotifierProvider
 // Future Provider
 
-
-// final nameProvider = Provider<String>(((ref) {
-//   return 'Prasanna';
-// }));
+final fetchUserProvider = FutureProvider((ref) {
+  final userRepository = ref.watch(userRepositoryProvider);
+  return userRepository.fetchUserData();
+});
 
 Future<void> main() async {
   runApp(const ProviderScope(child: MyApp()));
